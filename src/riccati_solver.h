@@ -12,7 +12,7 @@
 #include <iostream>
 #include <time.h>
 #include <vector>
-
+typedef unsigned int uint;
 /* Itereation method for continuous model */
 bool solveRiccatiIterationC(const Eigen::MatrixXd &A, const Eigen::MatrixXd &B,
                             const Eigen::MatrixXd &Q, const Eigen::MatrixXd &R,
