@@ -1,59 +1,18 @@
-# cmake_minimum_required (VERSION 3.12)
-
-# # Set project name
-# project(inverted_pendulum)
-
-# # Required to plot states
-# add_definitions(-std=c++17)
-
-# # Add library
-# add_subdirectory(src)
-
-# # Add executable to plot states
-# find_package(sciplot)
-# if(sciplot_FOUND)
-#   add_executable(plot src/main.cpp)
-#   target_link_libraries(plot sciplot::sciplot source)
-# else()
-#   message("sciplot need to be installed to generate the plot executable")
-# endif()
-
-# # Add executable to run unit tests
-# find_package(GTest)
-# if(GTest_FOUND)
-#   add_executable(test tests/main.cpp tests/inverted_pendulum_test.cpp)
-#   target_link_libraries(test source ${GTEST_LIBRARIES} pthread)
-# else()
-#   message("gloogletest need to be installed to generate the test executable")
-# endif()
-
-# # Additional resources like images and fonts
-# configure_file(res/Roboto-Regular.ttf Roboto-Regular.ttf COPYONLY)
-
-# # Add executable to open game environment
-# find_package(SFML COMPONENTS graphics window system REQUIRED)
-# add_executable(cartpole game/main.cpp)
-# target_link_libraries(cartpole source sfml-graphics sfml-window sfml-system)
-
-# # Add executable to run examples
-# add_executable(example examples/lqr_design.cpp)
-# target_link_libraries(example source)
-
 cmake_minimum_required(VERSION 3.12)
 
 project(inverted_pendulum)
 
-# ÉèÖÃC++±ê×¼
+# è®¾ç½®C++æ ‡å‡†
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Ìí¼ÓSFML°²×°Â·¾¶µ½CMAKE_PREFIX_PATH
+# æ·»åŠ SFMLå®‰è£…è·¯å¾„åˆ°CMAKE_PREFIX_PATH
 list(APPEND CMAKE_PREFIX_PATH "D:/Program Files/SFML-3.0.0")
 
-# Ìí¼Ó¿âÄ¿Â¼
+# æ·»åŠ åº“ç›®å½•
 add_subdirectory(src)
 
-# ÅäÖÃ»æÍ¼¿ÉÖ´ĞĞÎÄ¼ş£¨sciplot£©
+# é…ç½®ç»˜å›¾å¯æ‰§è¡Œæ–‡ä»¶ï¼ˆsciplotï¼‰
 find_package(sciplot)
 if(sciplot_FOUND)
     target_compile_features(sciplot::sciplot INTERFACE cxx_std_17)
@@ -63,7 +22,7 @@ else()
     message(WARNING "sciplot not found, plot executable will not be built")
 endif()
 
-# ÅäÖÃ²âÊÔ¿ÉÖ´ĞĞÎÄ¼ş£¨GTest£©
+# é…ç½®æµ‹è¯•å¯æ‰§è¡Œæ–‡ä»¶ï¼ˆGTestï¼‰
 find_package(GTest)
 if(GTest_FOUND)
     enable_testing()
@@ -73,10 +32,10 @@ else()
     message(WARNING "GTest not found, test executable will not be built")
 endif()
 
-# ¸´ÖÆ×ÊÔ´ÎÄ¼ş
+# å¤åˆ¶èµ„æºæ–‡ä»¶
 configure_file(res/Roboto-Regular.ttf Roboto-Regular.ttf COPYONLY)
 
-# ÅäÖÃÓÎÏ·¿ÉÖ´ĞĞÎÄ¼ş£¨SFML£©
+# é…ç½®æ¸¸æˆå¯æ‰§è¡Œæ–‡ä»¶ï¼ˆSFMLï¼‰
 find_package(SFML COMPONENTS Graphics Window System REQUIRED)
 add_executable(cartpole game/main.cpp)
 target_link_libraries(cartpole source 
@@ -85,6 +44,6 @@ target_link_libraries(cartpole source
     SFML::System
 )
 
-# Ê¾Àı¿ÉÖ´ĞĞÎÄ¼ş
+# ç¤ºä¾‹å¯æ‰§è¡Œæ–‡ä»¶
 add_executable(example examples/lqr_design.cpp)
 target_link_libraries(example source)
