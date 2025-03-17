@@ -33,7 +33,8 @@ This simulator is being developed on Ubuntu using the Windows Subsystem for Linu
 - make
 - gcc/g++
 - [eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) (included)
-- [sfml](https://www.sfml-dev.org/)
+- [sfmlv3.0](https://www.sfml-dev.org/)
+- [MinGW-14.2-seh-posix]
 - [googletest](https://github.com/google/googletest) (optional)
 - [sciplot](https://github.com/sciplot/sciplot) (optional)
 
