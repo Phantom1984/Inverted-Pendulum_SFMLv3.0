@@ -34,7 +34,7 @@ This simulator is being developed on Ubuntu using the Windows Subsystem for Linu
 - gcc/g++
 - [eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) (included)
 - [sfmlv3.0](https://www.sfml-dev.org/)
-- [MinGW-14.2-seh-posix]
+- [MinGW-14.2-seh-posix](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-19.1.1-12.0.0-ucrt-r2/winlibs-x86_64-posix-seh-gcc-14.2.0-mingw-w64ucrt-12.0.0-r2.7z)
 - [googletest](https://github.com/google/googletest) (optional)
 - [sciplot](https://github.com/sciplot/sciplot) (optional)
 
